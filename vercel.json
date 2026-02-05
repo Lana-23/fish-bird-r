@@ -12,6 +12,10 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
@@ -31,6 +35,10 @@
         {
           "key": "Referrer-Policy",
           "value": "origin-when-cross-origin"
+        },
+        {
+          "key": "X-Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src 'self' https://t.me; frame-ancestors 'self' https://t.me"
         }
       ]
     },
@@ -51,13 +59,15 @@
           "value": "public, max-age=86400"
         }
       ]
-    }
-  ],
-  "redirects": [
+    },
     {
-      "source": "/",
-      "destination": "/",
-      "permanent": true
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }
