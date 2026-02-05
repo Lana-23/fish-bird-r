@@ -33,22 +33,11 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        }
-      ]
-    }
   ]
 }
 ```
 
-#### Solution 2: Use Only `rewrites`
+#### Solution 2: Use Only `rewrites` (Recommended - Simplest)
 ```json
 {
   "version": 2,
@@ -64,19 +53,12 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
     {
       "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        }
-      ]
+      "destination": "/index.html"
     }
   ]
 }
@@ -199,7 +181,7 @@ Settings > Environment Variables
 
 ## 🔧 Best Practices
 
-### 1. SPA Configuration (Recommended)
+### 1. SPA Configuration (Recommended - Use `rewrites`)
 ```json
 {
   "version": 2,
@@ -213,25 +195,14 @@ Settings > Environment Variables
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "headers": [
-    {
       "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        }
-      ]
+      "destination": "/index.html"
     }
   ]
 }
