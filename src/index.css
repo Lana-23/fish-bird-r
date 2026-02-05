@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import modern wave styles */
+@import './styles.css';
+
 /* Custom styles for glassmorphism effect */
 .backdrop-blur-sm {
   backdrop-filter: blur(4px);
