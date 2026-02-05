@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for glassmorphism effect */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+}
+
+/* Custom styles for line clamp */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom styles for category badges */
+.category-badge {
+  @apply bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700 border border-gray-200;
+}
+
+/* Custom styles for enhanced cards */
+.enhanced-card {
+  @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50 overflow-hidden;
+}
+
+/* Custom styles for modern inputs */
+.modern-input {
+  @apply w-full pl-10 pr-4 py-3 bg-white/60 backdrop-blur-sm border border-white/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 shadow-sm;
+}
+
+.modern-select {
+  @apply w-full pl-10 pr-4 py-3 bg-white/60 backdrop-blur-sm border border-white/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 shadow-sm appearance-none cursor-pointer;
+}
+
+/* Custom styles for gradient backgrounds */
+.wave-background {
+  background: linear-gradient(135deg, #006994 0%, #2E8B57 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent 50%);
+  pointer-events: none;
+}
+
+.wave-background::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  background: linear-gradient(to top, white, transparent);
+  pointer-events: none;
+}
+
+/* Custom styles for header */
+.modern-header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Custom styles for logo */
+.logo-gradient {
+  background: linear-gradient(90deg, #006994, #2E8B57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom styles for CTA buttons */
+.cta-button {
+  background: linear-gradient(90deg, #006994, #2E8B57);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background: linear-gradient(90deg, #00567a, #247045);
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom styles for category icons */
+.category-icon {
+  font-size: 2rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.category-icon:hover {
+  opacity: 1;
+}
+
+/* Custom styles for stats badges */
+.stat-badge {
+  background: rgba(46, 139, 87, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+/* Custom styles for hover effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Custom styles for floating effect */
+.floating-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Telegram Mini App styles */
+.telegram-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.telegram-mode {
+  padding-bottom: 80px; /* Space for Telegram footer */
+}
+
+.telegram-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.telegram-user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.user-greeting {
+  font-weight: 600;
+  color: #333;
+}
+
+.telegram-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.telegram-action-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.telegram-action-btn:hover {
+  background: #f3f4f6;
+  transform: translateY(-1px);
+  border-color: #d1d5db;
+}
+
+.telegram-action-btn:active {
+  transform: translateY(0);
+  background: #e5e7eb;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  .telegram-footer {
+    padding: 0.75rem;
+  }
+  
+  .telegram-actions {
+    flex-direction: column;
+  }
+  
+  .telegram-action-btn {
+    border-radius: 10px;
+    padding: 0.625rem 0.875rem;
+  }
+}
+
+/* Telegram theme adaptation */
+:root {
+  --tg-theme-bg-color: #ffffff;
+  --tg-theme-text-color: #000000;
+  --tg-theme-button-color: #3390ec;
+  --tg-theme-button-text-color: #ffffff;
+}
+
+.telegram-app {
+  --bg-color: var(--tg-theme-bg-color, #ffffff);
+  --text-color: var(--tg-theme-text-color, #000000);
+  --button-color: var(--tg-theme-button-color, #3390ec);
+  --button-text-color: var(--tg-theme-button-text-color, #ffffff);
+}
+
+.telegram-app body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.telegram-app .telegram-footer {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.telegram-app .telegram-action-btn {
+  background: var(--button-color);
+  color: var(--button-text-color);
+  border-color: var(--button-color);
+}
+
+.telegram-app .telegram-action-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* Enhanced mobile experience */
+.mobile-optimized {
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100% !important;
+    margin: 0 1rem;
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .modern-header {
+    padding: 1rem;
+  }
+  
+  .modern-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .wave-background::before {
+    display: none; /* Hide radial gradient on mobile for performance */
+  }
+}
