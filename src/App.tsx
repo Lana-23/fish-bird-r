@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getSpeciesByType, getSpeciesById, Species } from './data/species';
 import { observationManager } from './data/observations';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import { telegramWebApp, TelegramUser } from './telegram';
-import TelegramApp from './components/TelegramApp';
 
 // Components
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
